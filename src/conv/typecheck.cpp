@@ -2,7 +2,7 @@
 // Created by dglr on 2021/10/30.
 //
 
-#include "typeck.h"
+#include "typecheck.h"
 
 #include <cstdio>
 #include <cstdlib>
@@ -10,9 +10,8 @@
 #include <unordered_map>
 
 #include "../util/common.h"
-#include "../structure/op.hpp"
 
-#define ERR(...) ERR_EXIT(TYPE_CHECK_ERROR, __VA_ARGS__)
+#define ERR(...) ERR_EXIT(TYPE_CHECK_ERR, __VA_ARGS__)
 
 // 有两种可能的符号：函数和变量，逻辑上需要一个variant<Func *, Decl *>，但是这太浪费空间了
 // 这两种指针都至少是按4对齐的，所以最后两位不可能是1/2，就用这做discriminant
