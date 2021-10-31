@@ -1,0 +1,7 @@
+[jobs.lab1]
+
+image = { source = "dockerfile", path = ".", tag = "lab1-cpp-example" }
+
+run = [
+    "./compiler $input $ir",
+]

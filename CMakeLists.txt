@@ -3,9 +3,14 @@ project(toy_miniSysY)
 
 set(CMAKE_CXX_STANDARD 20)
 
+include(src/conv/CMakeLists.txt)
+include(src/frontend/CMakeLists.txt)
+include(src/structure/CmakeLists.txt)
+include(src/util/CMakeLists.txt)
 
-file(GLOB_RECURSE source_files "src/*.cpp")
-file(GLOB_RECURSE header_files "src/*.h")
-add_executable(toy_miniSysY ${source_files} ${header_files} src/frontend/parser.h src/frontend/parser.cpp src/structure/ast.cpp src/structure/ast.h src/util/dbg.h)
+list(APPEND toy_miniSysY_SOURCES
+        src/main.cpp
+        )
 
-#add_executable(toy_miniSysY src/main.cpp util/common.cpp util/common.h)
+add_executable(toy_miniSysY ${toy_miniSysY_SOURCES})
+
