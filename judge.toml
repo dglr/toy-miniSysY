@@ -3,5 +3,5 @@
 image = { source = "dockerfile", path = ".", tag = "lab1-cpp-example" }
 
 run = [
-    "./toy_miniSysY $input $ir",
+    "./toy_miniSysY -o $input $ir",
 ]
