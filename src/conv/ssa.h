@@ -5,8 +5,8 @@
 #ifndef TOY_MINISYSY_SSA_H
 #define TOY_MINISYSY_SSA_H
 
-#include "../structure/ast.hpp"
-#include "../structure/ir.hpp"
+#include "../structure/ast.h"
+#include "../structure/ir.h"
 
 IrProgram *convert_ssa(Program &p);
 

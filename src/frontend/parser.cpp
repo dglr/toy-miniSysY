@@ -397,7 +397,6 @@ std::variant<Program, Token> Parser::parse(Lexer &lexer)
                         [[maybe_unused]] Program _1(std::move(*std::get_if<Program>(&stk.back().first)));
                         stk.pop_back();
                         _1.glob.emplace_back(std::move(_2));
-                        _1.glob.push_back(_2);
                         __ = std::move(_1);
                         break;
                     }
@@ -418,7 +417,7 @@ std::variant<Program, Token> Parser::parse(Lexer &lexer)
                         stk.pop_back();
                         [[maybe_unused]] Token _1(std::move(*std::get_if<Token>(&stk.back().first)));
                         stk.pop_back();
-                        __ = Func{true, _2.piece, std::move(_5)};
+                        __ = Func{true, _2.piece,  std::move(_5)};
                         break;
                     }
                     case 3:

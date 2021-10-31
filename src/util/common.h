@@ -6,6 +6,7 @@
 #define TOY_MINISYSY_COMMON_H
 #include "dbg.h"
 #include <type_traits>
+#include <map>
 
 #define ERR_EXIT(code, ...) \
   do {                      \
